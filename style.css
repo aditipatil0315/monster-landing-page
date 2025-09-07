@@ -112,7 +112,8 @@ nav .nav-links {
 
 .hero-img {
     position: absolute;
-    width: 25%;
+    top: 25%;
+    width: 20%;
     animation: float 4s ease-in-out infinite;
 }
 
