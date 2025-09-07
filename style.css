@@ -44,11 +44,92 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 0 20px;
+    /* text-align: center; */
     background-color:#0d0d0d;
     color: #d2d2d2;
 }
+
+.intro {
+    position: relative;
+}
+
+nav {
+    background-color: #d2d2d2;
+    color: #0d0d0d;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #0d0d0d;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.content {
+    width: 100%;
+    height: 90%;
+    background-color: #0d0d0d ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0 20px; */
+
+}
+
+.content .left , .content .right {
+    width: 50%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.content .left {
+    background-color: #0d0d0d;
+}
+
+.content .right {
+    background-color: #D2D2D2;
+}
+
+/* .hero-img {
+    position: absolute;
+    width: 25%;
+} */
+
+.hero-img {
+    position: absolute;
+    width: 25%;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px); /* moves upward */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
 
 .model-container {
     position: absolute;
