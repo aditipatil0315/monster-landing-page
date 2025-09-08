@@ -417,5 +417,96 @@ nav .nav-links {
 
 
 
+/* Outro Section */
+.outro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #0d0d0d;
+  color: #d2d2d2;
+  padding: 5rem 2rem;
+  gap: 3rem;
+}
+
+.outro-content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.outro-content h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #d2d2d2;
+}
+
+.outro-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #a6a6a6;
+}
+
+.outro-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* CTA Buttons (reuse styles from content section) */
+.secondary-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #d2d2d2;
+  border-radius: 50px;
+  background: transparent;
+  color: #d2d2d2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #d2d2d2;
+  color: #0d0d0d;
+  transform: scale(1.05);
+}
+
+/* Outro Footer */
+.outro-footer {
+  border-top: 1px solid #333;
+  padding-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.outro-footer p {
+  font-size: 0.9rem;
+  color: #757575;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #d2d2d2;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #f30856;
+}
 
 
