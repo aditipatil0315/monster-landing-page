@@ -16,6 +16,59 @@ import Lenis from "@studio-freight/lenis";
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+    // === Custom Cursor ===
+const cursor = document.querySelector(".cursor");
+let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let pos = { x: mouse.x, y: mouse.y };
+
+window.addEventListener("mousemove", (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+// Animate cursor follow with GSAP ticker
+gsap.ticker.add(() => {
+  pos.x += (mouse.x - pos.x) * 0.2;
+  pos.y += (mouse.y - pos.y) * 0.2;
+  gsap.set(cursor, { x: pos.x, y: pos.y });
+});
+
+// Distortion/stretch effect on move
+let lastX = mouse.x ;
+let lastY = mouse.y;
+gsap.ticker.add(() => {
+  const dx = mouse.x - lastX;
+  const dy = mouse.y - lastY;
+  lastX = mouse.x;
+  lastY = mouse.y;
+
+  const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+  const distance = Math.min(Math.sqrt(dx * dx + dy * dy) /2 , 40);
+
+  gsap.to(cursor, {
+    rotation: angle,
+    scaleX: 1 + distance / 30,
+    scaleY: 1 - distance / 60,
+    transformOrigin: "center",
+    duration: 0.2,
+    ease: "power3.out",
+  });
+});
+
+// Grow cursor on hover
+document.querySelectorAll("a, button, .cta-btn").forEach((el) => {
+  el.addEventListener("mouseenter", () => cursor.classList.add("active"));
+  el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
+});
+
+
+
+
+
+
+
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
     const lenis = new Lenis();
